@@ -1,0 +1,1601 @@
+2021-01-16 16:46:13,352 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:46:17,805 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:46:17,806 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:46:17,806 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:46:17,806 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:46:17,807 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:46:17,807 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:46:17,807 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:46:17,807 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:46:17,807 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:46:17,807 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:46:18,471 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:46:18,471 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:49:08,266 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:49:13,458 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:49:13,459 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:49:13,689 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:49:13,690 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:49:13,849 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:49:13,849 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:49:13,898 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:49:13,898 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:49:14,331 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:49:14,332 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:49:14,491 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:49:14,492 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:51:42,962 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:53:33,336 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:53:38,525 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:53:38,526 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:53:38,913 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:53:38,914 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:53:38,915 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:53:38,915 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:53:38,915 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:53:38,916 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:53:39,067 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:53:39,067 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:53:39,425 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:53:39,426 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:10,947 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:55:15,501 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:55:15,501 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:55:15,502 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:55:15,502 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:55:15,502 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:55:15,502 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Commit Candidate to Active' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 1440, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/manager.py", line 226, in execute
+    return cls(self._session,
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/ncclient/operations/rpc.py", line 360, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: 
+Configuration database is not open
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 630, in unlock
+    self.rpc.unlock_configuration()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/rpcmeta.py", line 364, in _exec_rpc
+    return self._junos.execute(rpc, **dec_args)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: None, message: Configuration database is not open)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_commit.py", line 18, in pyez_commit
+    config.unlock()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jnpr/junos/utils/config.py", line 633, in unlock
+    raise UnlockError(rsp=err.rsp)
+jnpr.junos.exception.UnlockError: UnlockError(severity: error, bad_element: None, message: Configuration database is not open)
+
+2021-01-16 16:55:15,503 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:15,503 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:15,503 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:15,503 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:15,503 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:15,504 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 18, in rollback
+    task.run(task=pyez_commit, name='Commit Candidate to Active')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Commit Candidate to Active (failed)
+
+
+2021-01-16 16:55:44,483 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:56:50,196 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 16:58:37,917 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:00:36,448 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:03:35,421 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:05:23,921 -  nornir.core -     INFO -        run() - Running task 'deploy_isis' with args {} on 6 hosts
+2021-01-16 17:05:41,495 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:05:41,497 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'pyez_rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: pyez_rollback() got an unexpected keyword argument 'title'
+
+2021-01-16 17:05:41,497 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'pyez_rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: pyez_rollback() got an unexpected keyword argument 'title'
+
+2021-01-16 17:05:41,498 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'pyez_rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: pyez_rollback() got an unexpected keyword argument 'title'
+
+2021-01-16 17:05:41,499 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'pyez_rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: pyez_rollback() got an unexpected keyword argument 'title'
+
+2021-01-16 17:05:41,499 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, title='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: pyez_rollback (failed)
+
+
+2021-01-16 17:05:41,499 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, title='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: pyez_rollback (failed)
+
+
+2021-01-16 17:05:41,499 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'pyez_rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: pyez_rollback() got an unexpected keyword argument 'title'
+
+2021-01-16 17:05:41,500 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'pyez_rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+TypeError: pyez_rollback() got an unexpected keyword argument 'title'
+
+2021-01-16 17:05:41,500 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, title='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: pyez_rollback (failed)
+
+
+2021-01-16 17:05:41,500 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, title='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: pyez_rollback (failed)
+
+
+2021-01-16 17:05:41,500 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, title='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: pyez_rollback (failed)
+
+
+2021-01-16 17:05:41,501 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, title='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: pyez_rollback (failed)
+
+
+2021-01-16 17:07:28,812 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:09:27,928 -  nornir.core -     INFO -        run() - Running task 'deploy_isis' with args {} on 6 hosts
+2021-01-16 17:09:40,946 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:09:42,747 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Rollback Candidate Config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_rollback.py", line 23, in pyez_rollback
+    return Result(host=task.host, result=f)
+NameError: name 'f' is not defined
+
+2021-01-16 17:09:42,748 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, name='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Rollback Candidate Config (failed)
+
+
+2021-01-16 17:09:42,777 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Rollback Candidate Config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_rollback.py", line 23, in pyez_rollback
+    return Result(host=task.host, result=f)
+NameError: name 'f' is not defined
+
+2021-01-16 17:09:42,778 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Rollback Candidate Config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_rollback.py", line 23, in pyez_rollback
+    return Result(host=task.host, result=f)
+NameError: name 'f' is not defined
+
+2021-01-16 17:09:42,778 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Rollback Candidate Config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_rollback.py", line 23, in pyez_rollback
+    return Result(host=task.host, result=f)
+NameError: name 'f' is not defined
+
+2021-01-16 17:09:42,778 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, name='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Rollback Candidate Config (failed)
+
+
+2021-01-16 17:09:42,779 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Rollback Candidate Config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_rollback.py", line 23, in pyez_rollback
+    return Result(host=task.host, result=f)
+NameError: name 'f' is not defined
+
+2021-01-16 17:09:42,779 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, name='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Rollback Candidate Config (failed)
+
+
+2021-01-16 17:09:42,779 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Rollback Candidate Config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_pyez/plugins/tasks/pyez_rollback.py", line 23, in pyez_rollback
+    return Result(host=task.host, result=f)
+NameError: name 'f' is not defined
+
+2021-01-16 17:09:42,779 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, name='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Rollback Candidate Config (failed)
+
+
+2021-01-16 17:09:42,779 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, name='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Rollback Candidate Config (failed)
+
+
+2021-01-16 17:09:42,780 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'rollback' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-pyez/deploy-isis/rollback.py", line 14, in rollback
+    task.run(task=pyez_rollback, rb_id=1, name='Rollback Candidate Config')
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Rollback Candidate Config (failed)
+
+
+2021-01-16 17:09:51,824 -  nornir.core -     INFO -        run() - Running task 'rollback' with args {} on 6 hosts
+2021-01-16 17:10:11,383 -  nornir.core -     INFO -        run() - Running task 'deploy_isis' with args {} on 6 hosts

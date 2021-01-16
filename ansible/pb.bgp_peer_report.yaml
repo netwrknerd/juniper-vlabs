@@ -1,0 +1,62 @@
+---
+- name: BGP Peer Report
+  hosts: juniper
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  vars_files:
+    - group_vars/juniper.yaml
+  vars:
+    ansible_python_interpreter: ~/.pyenv/versions/ansible-3.9.0/bin/python
+    credentials:
+      host: "{{ansible_host}}"
+      username: "jcluser"
+      password: "Juniper!1"
+    files:
+       - "{{ inventory_hostname }}_bgp.txt"
+       - "{{ inventory_hostname }}_bgp_report.txt"
+
+  tasks:
+    - name: Verify "tmp" directory exists
+      stat: 
+        path: "{{playbook_dir}}/tmp/"
+      register: tmp
+
+    - name: Create "tmp" directory if false
+      file:
+        path: "{{playbook_dir}}/tmp"
+        state: directory
+      when: tmp.stat.exists == false
+
+    - name: Verify "files" exist
+      stat:
+        path: "{{playbook_dir}}/tmp/{{ item }}"
+      with_items: "{{ files }}"
+      register: check_files_exist
+
+    - name: Touch "files" if false
+      file:
+        path: "{{playbook_dir}}/tmp/{{ item.item }}"
+        state: touch
+      with_items: "{{ check_files_exist.results }}"
+      when: item.stat.exists == false
+
+    - name: Get BGP summary info and output to a file
+      juniper_junos_rpc:
+        provider: "{{credentials}}"
+        rpcs: "get-bgp-summary-information"
+        formats: xml
+        dest: "{{playbook_dir}}/tmp/{{ inventory_hostname }}_bgp.txt"
+
+    - name: Compute total established BGP sessions and register it to a var
+      xml:
+        path: "{{playbook_dir}}/tmp/{{ inventory_hostname }}_bgp.txt"
+        xpath: /bgp-information/bgp-peer/peer-state[text()="Established"]
+        count: yes
+      register: sessions
+    
+    - name: Output total established BGP sessions to a file
+      lineinfile:
+        path: "{{playbook_dir}}/tmp/{{ inventory_hostname }}_bgp_report.txt"
+        line: "BGP TOTAL SESSIONS:{{ sessions.count }}"

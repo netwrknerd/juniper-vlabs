@@ -1,0 +1,26 @@
+---
+- name: "Get Junos Facts"
+  hosts: juniper
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  vars_files:
+    - group_vars/juniper.yaml
+  vars:
+    ansible_python_interpreter: ~/.pyenv/versions/ansible-3.9.0/bin/python
+    credentials:
+      host: "{{ansible_host}}"
+      username: "jcluser"
+      password: "Juniper!1"
+
+  tasks:
+    - name: "Get Junos facts"
+      juniper_junos_facts:
+        provider: "{{credentials}}"
+        config_format: "text"
+      register: response
+
+    - name: "Print result"
+      debug:
+        var: response

@@ -1,0 +1,24 @@
+---
+# hosts.yaml file
+all:
+  children:
+    juniper:
+      hosts:
+        vMX1:
+          ansible_host: 66.129.235.13
+          ansible_port: 35003
+        vMX2:
+          ansible_host: 66.129.235.13
+          ansible_port: 35006
+        vMX3:
+          ansible_host: 66.129.235.13
+          ansible_port: 35009
+        vMX4:
+          ansible_host: 66.129.235.13
+          ansible_port: 35012
+        vMX5:
+          ansible_host: 66.129.235.13
+          ansible_port: 35015
+        vMX6:
+          ansible_host: 66.129.235.13
+          ansible_port: 35018

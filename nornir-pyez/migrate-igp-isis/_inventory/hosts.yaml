@@ -1,0 +1,161 @@
+---
+# hosts.yaml file
+vMX1:
+    hostname: 66.129.235.13
+    port: 35003
+    groups:
+        - juniper
+    data:
+        isis_int:
+            lo0.0:
+                isActive: True
+                net: 49.0000.0000.0000.0001.00
+            ge-0/0/3.0:
+                isActive: True
+                level: 2
+            ge-0/0/4.0:
+                isActive: True
+                level: 2
+        node_type: 'MX'
+        interfaces:
+            lo0:
+                ipv4_address: '10.100.100.1/32'
+            ge-0/0/3:
+                ipv4_address: '10.100.12.1/24'
+            ge-0/0/4:
+                ipv4_address: '10.100.13.1/24'
+
+vMX2:
+    hostname: 66.129.235.13
+    port: 35006
+    groups:
+        - juniper
+    data:
+        isis_int:
+            lo0.0:
+                isActive: True
+                net: 49.0000.0000.0000.0002.00
+            ge-0/0/2.0:
+                isActive: True
+                level: 2
+            ge-0/0/3.0:
+                isActive: True
+                level: 2
+        node_type: 'MX'
+        interfaces:
+            lo0:
+                ipv4_address: '10.100.100.2/32'
+            ge-0/0/0:
+                ipv4_address: '10.100.24.1/24'
+            ge-0/0/1:
+                ipv4_address: '10.100.25.1/24'
+            ge-0/0/2:
+                ipv4_address: '10.100.23.1/24'
+            ge-0/0/3:
+                ipv4_address: '10.100.12.2/24'
+
+vMX3:
+    hostname: 66.129.235.13
+    port: 35009
+    groups:
+        - juniper
+    data:
+        isis_int:
+            lo0.0:
+                isActive: True
+                net: 49.0000.0000.0000.0003.00
+            ge-0/0/2.0:
+                isActive: True
+                level: 2
+            ge-0/0/4.0:
+                isActive: True
+                level: 2
+        node_type: 'MX'
+        interfaces:
+            lo0:
+                ipv4_address: '10.100.100.3/32'
+            ge-0/0/0:
+                ipv4_address: '10.100.35.1/24'
+            ge-0/0/1:
+                ipv4_address: '10.100.34.1/24'
+            ge-0/0/2:
+                ipv4_address: '10.100.23.2/24'
+            ge-0/0/4:
+                ipv4_address: '10.100.13.2/24'
+
+vMX4:
+    hostname: 66.129.235.13
+    port: 35012
+    groups:
+        - juniper
+    data:
+        isis_int:
+            lo0.0:
+                isActive: True
+                net: 49.0000.0000.0000.0004.00
+        node_type: 'MX'
+        interfaces:
+            lo0:
+                ipv4_address: '10.100.100.4/32'
+            ge-0/0/0:
+                ipv4_address: '10.100.24.2/24'
+            ge-0/0/1:
+                ipv4_address: '10.100.34.2/24'
+            ge-0/0/2:
+                ipv4_address: '10.100.45.1/24'
+            ge-0/0/3:
+                ipv4_address: '10.100.46.1/24'
+
+vMX5:
+    hostname: 66.129.235.13
+    port: 35015
+    groups:
+        - juniper
+    data:
+        isis_int:
+            lo0.0:
+                isActive: True
+                net: 49.0001.0000.0000.0005.00
+            ge-0/0/4.0:
+                isActive: True
+                level: 2
+        node_type: 'MX'
+        interfaces:
+            lo0:
+                ipv4_address: '10.100.100.5/32'
+            ge-0/0/0:
+                ipv4_address: '10.100.35.2/24'
+            ge-0/0/1:
+                ipv4_address: '10.100.25.2/24'
+            ge-0/0/2:
+                ipv4_address: '10.100.45.2/24'
+            ge-0/0/4:
+                ipv4_address: '10.100.56.1/24'
+
+vMX6:
+    hostname: 66.129.235.13
+    port: 35018
+    groups:
+        - juniper
+    data: 
+        isis_int:
+            lo0.0:
+                isActive: True
+                net: 49.0002.0000.0000.0006.00
+            ge-0/0/1.0:
+                isActive: True
+                level: 2
+            ge-0/0/2.0:
+                isActive: True
+                level: 2
+            ge-0/0/3.0:
+                isActive: True
+                level: 2
+        node_type: 'MX'
+        interfaces:
+            lo0:
+                ipv4_address: '10.100.100.6/32'
+            ge-0/0/3:
+                ipv4_address: '10.100.46.2/24'
+            ge-0/0/4:
+                ipv4_address: '10.100.56.2/24'

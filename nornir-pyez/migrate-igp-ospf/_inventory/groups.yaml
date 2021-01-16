@@ -1,0 +1,6 @@
+---
+# groups.yaml file
+juniper:
+    platform: juniper_junos
+    username: jcluser
+    password: Juniper!1
