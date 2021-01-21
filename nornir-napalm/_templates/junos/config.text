@@ -1,0 +1,26 @@
+{#Interface Configuration#} 
+{% for iface in host.ifaces %}
+set interfaces {{ iface.name }} description {{ iface.description }} 
+set interfaces {{ iface.name }} unit {{ iface.unit }} family inet address {{ iface.ipv4_address }}
+set interfaces {{ iface.name }} unit {{ iface.unit }} family inet6 address {{ iface.ipv6_address }}
+{% if iface.name  == 'lo0' -%}
+set interfaces {{ iface.name }} unit {{ iface.unit }} family iso address {{ iface.iso_address }}
+{% elif iface.name  != 'lo0' -%}
+set interfaces {{ iface.name }} unit {{ iface.unit }} family mpls
+{% endif %}
+{% endfor %}
+{#Protocol Configuration#} 
+{#IS-IS#} 
+{% if host.isis_ifaces is defined -%}
+{% if level  == '1' -%}
+set protocols isis interface {{ name }} level 2 disable
+{% elif level  == '2' -%}
+set protocols isis interface {{ name }} level 1 disable
+{% else %}
+{% endif %}
+{#LDP#}
+{% for iface in host.isis_ifaces %}
+set protocols ldp interface {{ iface.name }}
+{% endfor %}
+{#MPLS#}
+set protocols mpls interface lo0.0

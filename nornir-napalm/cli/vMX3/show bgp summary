@@ -1,0 +1,15 @@
+
+Threading mode: BGP I/O
+Groups: 3 Peers: 4 Down peers: 0
+Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
+inet.0               
+                       0          0          0          0          0          0
+Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
+10.100.34.2           64533         21         20       0       0        8:23 Establ
+  inet.0: 0/0/0/0
+10.100.35.2           64544         20         19       0       0        8:13 Establ
+  inet.0: 0/0/0/0
+10.100.100.1          64522         18         18       0       0        7:24 Establ
+  inet.0: 0/0/0/0
+10.100.100.2          64522         18         17       0       0        7:20 Establ
+  inet.0: 0/0/0/0

@@ -1,0 +1,70 @@
+
+Interface               Admin Link Proto    Local                 Remote
+ge-0/0/0                up    up
+ge-0/0/0.0              up    up   inet     10.100.35.2/24  
+                                   multiservice
+lc-0/0/0                up    up
+lc-0/0/0.32769          up    up   vpls    
+pfe-0/0/0               up    up
+pfe-0/0/0.16383         up    up   inet    
+                                   inet6   
+pfh-0/0/0               up    up
+pfh-0/0/0.16383         up    up   inet    
+pfh-0/0/0.16384         up    up   inet    
+ge-0/0/1                up    up
+ge-0/0/1.0              up    up   inet     10.100.25.2/24  
+                                   multiservice
+ge-0/0/2                up    up
+ge-0/0/2.0              up    up   inet     10.100.45.2/24  
+                                   multiservice
+ge-0/0/3                up    down
+ge-0/0/3.16386          up    down
+ge-0/0/4                up    up
+ge-0/0/4.0              up    up   inet     10.100.56.1/24  
+                                   multiservice
+ge-0/0/5                up    down
+ge-0/0/5.16386          up    down
+ge-0/0/6                up    down
+ge-0/0/6.16386          up    down
+ge-0/0/7                up    down
+ge-0/0/7.16386          up    down
+cbp0                    up    up
+demux0                  up    up
+dsc                     up    up
+em1                     up    up
+em1.0                   up    up   inet     10.0.0.4/8      
+                                            128.0.0.1/2     
+                                            128.0.0.4/2     
+                                   inet6    fe80::250:56ff:fea2:9279/64
+                                            fec0::a:0:0:4/64
+                                   tnp      0x4             
+esi                     up    up
+fti0                    up    up
+fti1                    up    up
+fti2                    up    up
+fti3                    up    up
+fti4                    up    up
+fti5                    up    up
+fti6                    up    up
+fti7                    up    up
+fxp0                    up    up
+fxp0.0                  up    up   inet     100.123.1.4/16  
+gre                     up    up
+ipip                    up    up
+irb                     up    up
+jsrv                    up    up
+jsrv.1                  up    up   inet     128.0.0.127/2   
+lo0                     up    up
+lo0.0                   up    up   inet     10.100.100.5        --> 0/0
+lo0.16384               up    up   inet     127.0.0.1           --> 0/0
+lo0.16385               up    up   inet    
+lsi                     up    up
+mif                     up    up
+mtun                    up    up
+pimd                    up    up
+pime                    up    up
+pip0                    up    up
+pp0                     up    up
+rbeb                    up    up
+tap                     up    up
+vtep                    up    up

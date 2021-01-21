@@ -1,0 +1,20 @@
+---
+# groups.yaml file
+
+network_device: {}
+
+juniper:
+  platform: junos
+
+core:
+  groups:
+    - network_device
+  data:
+    role: core
+
+common:
+  data:
+    snmp_community: public
+    name_servers:
+      - 8.8.8.8
+      - 8.8.8.4

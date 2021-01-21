@@ -1,0 +1,36 @@
+interfaces {
+{% for iface in host.ifaces %}
+    {{ iface.name }} {
+        description "{{ iface.description }}";
+        unit 0 {
+            family inet {
+                address {{ iface.ipv4_address }};
+            }
+            family inet6 {
+                address {{ iface.ipv6_address }};
+            }
+            {% if iface.name  == 'lo0' -%}
+            family iso {
+                address {{ iface.iso_address}}
+            }
+            {% elif iface.name  != 'lo0' -%}
+            family mpls {
+            }
+            {% endif %}
+{% endfor %}
+        }
+    }
+}
+protocol {
+    isis {
+{% for ifaces, level in host.isis_ifaces.ifaces()  %}
+        interface {{ ifaces }} {
+{% if level  == '1' -%}
+            level 2 disable;
+{% elif level == '2' -%}
+            level 1 disable;
+{% endif %}
+{% endfor %}
+        }
+    }
+}

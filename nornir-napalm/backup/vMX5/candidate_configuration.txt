@@ -1,0 +1,147 @@
+
+## Last changed: 2021-01-19 22:35:33 UTC
+version 20191212.201431_builder.r1074901;
+system {
+    host-name vMX5;
+    root-authentication {
+        encrypted-password "$6$w0uV/Veg$MxUKS00aYKDRZKuI13guEQ3yhv0XjZ5vDD/xBSVatXwzxvgMZCjERUu5kEpMaRzFDhrcyf8NLW8lQiM.KpUCE1";
+    }
+    scripts {
+        language python;
+    }
+    login {
+        user jcladmin {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$6$COH4QgW/$uFzZAk1fYdnuwVl5WUjhb/4JdtSWIq7y/eCqB3qEFLFK/QBeG1C686NzW0XL0sz8qX4bzyYW0uMIBNXK47Kw7.";
+            }
+        }
+        user jcluser {
+            uid 2001;
+            class super-user;
+            authentication {
+                encrypted-password "$6$G44rGtvQ$I3jMwJk.0/CbTlhEoZzoDGv9dcFuZYdKvNFHiZwZ6s5Lktf/vMHipZxDwEXxgtid.dmN5K27fMBYwKnSijiQ/.";
+            }
+        }
+    }
+    services {
+        ssh {
+            root-login allow;
+        }
+        netconf {
+            ssh;
+        }
+        rest {
+            http {
+                port 3000;
+            }
+            enable-explorer;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    processes {
+        dhcp-service {
+            traceoptions {
+                file dhcp_logfile size 10m;
+                level all;
+                flag all;
+            }
+        }
+    }
+}
+chassis {
+    fpc 0 {
+        pic 0 {
+            number-of-ports 8;
+        }
+        lite-mode;
+    }
+}
+interfaces {
+    ge-0/0/0 {
+        unit 0 {
+            family inet {
+                address 10.100.35.2/24;
+            }
+        }
+    }
+    ge-0/0/1 {
+        unit 0 {
+            family inet {
+                address 10.100.25.2/24;
+            }
+        }
+    }
+    ge-0/0/2 {
+        unit 0 {
+            family inet {
+                address 10.100.45.2/24;
+            }
+        }
+    }
+    ge-0/0/4 {
+        unit 0 {
+            family inet {
+                address 10.100.56.1/24;
+            }
+        }
+    }
+    fxp0 {
+        unit 0 {
+            family inet {
+                address 100.123.1.4/16;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 10.100.100.5/32;
+            }
+        }
+    }
+}
+routing-options {
+    static {
+        route 0.0.0.0/0 next-hop 100.123.0.1;
+    }
+    autonomous-system 64544;
+}
+protocols {
+    ospf {
+        area 0.0.0.0 {
+            interface lo0.0;
+            interface ge-0/0/4.0;
+        }
+    }
+    bgp {
+        group IBGP {
+            type internal;
+            local-address 10.100.100.5;
+            neighbor 10.100.100.6;
+        }
+        group to-AS64533 {
+            type external;
+            peer-as 64533;
+            neighbor 10.100.45.1;
+        }
+        group to-AS64522 {
+            type external;
+            peer-as 64522;
+            neighbor 10.100.25.1;
+            neighbor 10.100.35.1;
+        }
+    }
+}
