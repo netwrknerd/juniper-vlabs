@@ -5,11 +5,12 @@ from nornir_jinja2.plugins.tasks.template_file import template_file
 from nornir_utils.plugins.functions import print_title, print_result
 
 def configuration(task):
-    r = task.run(task=template_file, name="Generate configuration", template="config.text", path=f"_templates/{task.host.platform}")
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
     task.host["config"] = r.result
 
 nr = InitNornir(config_file="_config.yaml", dry_run=True)
-core = nr.filter(F(role="core"))
+#core = nr.filter(F(name="vMX1"))
+core = nr.filter(F(platform="junos"))
 print(core.inventory.hosts.keys())
 
 # from nornir.core.filter import F

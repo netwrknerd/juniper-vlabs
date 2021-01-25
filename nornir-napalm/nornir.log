@@ -10377,3 +10377,2371 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
 
 
+2021-01-25 00:49:09,027 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 00:49:09,060 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 2, in top-level template code
+    {% for item in interfaces %}
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+2021-01-25 00:49:09,061 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:09,061 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:09,061 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:09,061 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:09,061 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:09,062 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:09,062 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:09,062 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:09,062 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:09,062 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:09,062 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:53,949 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 00:49:53,982 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 2, in top-level template code
+    {% for item in interfaces %}
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+2021-01-25 00:49:53,982 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:53,982 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:53,982 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:53,983 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:53,983 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 14, in root
+    address {{ item.iso_address}}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 00:49:53,984 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:53,984 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:53,984 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:53,984 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:53,984 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:49:53,985 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:52:05,679 -  nornir.core -  WARNING -        run() - Task 'configuration' has not been run – 0 hosts selected
+2021-01-25 00:52:28,405 -  nornir.core -  WARNING -        run() - Task 'configuration' has not been run – 0 hosts selected
+2021-01-25 00:52:45,326 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:52:45,334 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 2, in top-level template code
+    {% for item in interfaces %}
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+2021-01-25 00:52:45,334 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:54:50,096 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:54:50,107 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 2, in top-level template code
+    {% for item in interfaces %}
+jinja2.exceptions.UndefinedError: 'interfaces' is undefined
+
+2021-01-25 00:54:50,108 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:56:27,649 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:56:27,657 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 2, in top-level template code
+    {% for item in host.interfaces %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interfaces'
+
+2021-01-25 00:56:27,657 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:56:47,343 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:56:47,351 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in isis_int  %}
+jinja2.exceptions.UndefinedError: 'isis_int' is undefined
+
+2021-01-25 00:56:47,352 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 00:57:06,689 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:58:13,715 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:58:25,755 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:58:57,935 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 00:59:10,026 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 01:00:26,774 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 01:00:50,749 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 01:02:26,882 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 01:02:50,202 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 1 hosts
+2021-01-25 01:08:03,190 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:08:03,222 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in host.isis_int  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+2021-01-25 01:08:03,222 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in host.isis_int  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+2021-01-25 01:08:03,222 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in host.isis_int  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+2021-01-25 01:08:03,223 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:08:03,223 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:08:03,223 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:08:03,224 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:03,224 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:03,224 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:03,224 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:03,224 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:03,224 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:22,387 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:08:22,416 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in host.isis_intf  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_intf'
+
+2021-01-25 01:08:22,417 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_intf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:08:22,417 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:22,417 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:08:42,005 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:08:42,037 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in host.isis_intf  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_intf'
+
+2021-01-25 01:08:42,037 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:12:15,262 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:12:15,291 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% for item in host.isis_intf  %}
+TypeError: 'NoneType' object is not iterable
+
+2021-01-25 01:12:15,291 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:12:42,792 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:12:42,821 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:12:42,822 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:13:37,449 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:13:37,483 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item in host.isis_intf  %}
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:13:37,483 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item in host.isis_intf  %}
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:13:37,483 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item in host.isis_intf  %}
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:13:37,483 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item in host.isis_intf  %}
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:13:37,484 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:13:37,484 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:13:37,484 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 36, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:13:37,485 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:13:37,485 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 36, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:13:37,485 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:13:37,485 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:13:37,485 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:11,075 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:14:11,114 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item.name in host.isis_intf  %}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:11,114 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item.name in host.isis_intf  %}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:11,115 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item.name in host.isis_intf  %}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:11,115 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item.name in host.isis_intf  %}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:11,115 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:11,116 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    {% if item.name in host.isis_intf  %}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:11,116 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:11,116 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:11,117 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:11,117 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 36, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 753, in __getattr__
+    return self._fail_with_undefined_error()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:11,117 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:11,118 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:45,461 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:14:45,501 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 29, in top-level template code
+    {% if item.level in host.isis_intf   == '1' -%}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:45,501 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:14:45,501 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 29, in top-level template code
+    {% if item.level in host.isis_intf   == '1' -%}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:45,501 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 29, in top-level template code
+    {% if item.level in host.isis_intf   == '1' -%}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:45,502 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 29, in top-level template code
+    {% if item.level in host.isis_intf   == '1' -%}
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+2021-01-25 01:14:45,503 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:45,503 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:45,503 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 42, in root
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 753, in __getattr__
+    return self._fail_with_undefined_error()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'item' is undefined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:45,503 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:45,503 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:45,504 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:45,504 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:58,896 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:14:58,916 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 34
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:58,917 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 34, in template
+    }
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+
+2021-01-25 01:14:58,918 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 34
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:58,918 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 34
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:58,918 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 34
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:58,918 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 34
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:14:58,919 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:58,919 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:58,919 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:58,919 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:58,919 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:14:58,919 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:15:20,691 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:15:20,711 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 33
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:15:20,711 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 33
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:15:20,711 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 33
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:15:20,711 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 33
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:15:20,712 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 628, in compile
+    source = self._parse(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 539, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 937, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 919, in subparse
+    rv = self.parse_statement()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 141, in parse_statement
+    return getattr(self, "parse_" + self.stream.current.value)()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 210, in parse_for
+    body = self.parse_statements(("name:endfor", "name:else"))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 181, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 115, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 101, in _fail_ut_eof
+    self.fail(" ".join(message), lineno)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/parser.py", line 64, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+  File "_templates/junos/config.j2", line 33
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:15:20,712 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:15:20,712 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:15:20,712 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 33, in template
+    }
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+
+2021-01-25 01:15:20,712 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:15:20,712 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:15:20,713 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:15:20,713 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:28,482 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:16:28,515 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 25, in top-level template code
+    {% for item in host.isis_int  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+2021-01-25 01:16:28,515 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 25, in top-level template code
+    {% for item in host.isis_int  %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+2021-01-25 01:16:28,515 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:16:28,516 - nornir.core.task -    ERROR -      start() - Host 'vMX6': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:28,516 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:16:28,516 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:16:28,516 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1088, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "_templates/junos/config.j2", line 35, in root
+    }
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/runtime.py", line 747, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'isis_int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 830, in handle_exception
+    from .debug import rewrite_traceback_stack
+ImportError: cannot import name 'rewrite_traceback_stack' from partially initialized module 'jinja2.debug' (most likely due to a circular import) (/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/debug.py)
+
+2021-01-25 01:16:28,517 - nornir.core.task -    ERROR -      start() - Host 'vMX3': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:28,517 - nornir.core.task -    ERROR -      start() - Host 'vMX2': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:28,517 - nornir.core.task -    ERROR -      start() - Host 'vMX1': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:28,517 - nornir.core.task -    ERROR -      start() - Host 'vMX5': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:28,517 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:36,196 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:16:36,224 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 26, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:16:36,225 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:16:55,475 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:16:55,503 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:16:55,503 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:17:11,361 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:17:11,389 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:17:11,389 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:17:48,612 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:17:48,640 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:17:48,640 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:18:06,718 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:18:06,748 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:18:06,748 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+
+2021-01-25 01:18:33,061 -  nornir.core -     INFO -        run() - Running task 'configuration' with args {} on 6 hosts
+2021-01-25 01:18:33,089 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'Generate configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "_templates/junos/config.j2", line 27, in top-level template code
+    interface {{ item.name }} {
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2021-01-25 01:18:33,089 - nornir.core.task -    ERROR -      start() - Host 'vMX4': task 'configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/Users/cj/Documents/Git/netwrknerd/juniper-vlabs/nornir-napalm/configuration_dry_run.py", line 8, in configuration
+    r = task.run(task=template_file, name="Generate configuration", template="config.j2", path=f"_templates/{task.host.platform}")
+  File "/Users/cj/.pyenv/versions/nornir-3.9.0/lib/python3.9/site-packages/nornir/core/task.py", line 168, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Generate configuration (failed)
+
+

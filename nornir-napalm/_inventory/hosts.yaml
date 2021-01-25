@@ -8,32 +8,27 @@ vMX1:
         - core
     data:
         site: 522
-        ifaces:
-            - lo0.0:
-              name: 'lo0'
+        interfaces:
+            - name: 'lo0'
               unit: '0'
               description: 'Loopback'
               ipv4_address: '10.100.100.1/32'
               ipv6_address: '2001:db8:100:100::1/128'
               iso_address: '49.0000.0000.0000.0001.00'
-            - ge-0/0/3.0:
-              name: 'ge-0/0/3'
+            - name: 'ge-0/0/3'
               unit: '0'
               description: 'ge-0/0/3.vMX2 [BB]'
               ipv4_address: '10.100.12.1/30'
               ipv6_address: '2001:db8:100:12::1/127'
-            - ge-0/0/4.0:
-              name: 'ge-0/0/4'
+            - name: 'ge-0/0/4'
               unit: '0'
               description: 'ge-0/0/4.vMX3 [BB]'
               ipv4_address: '10.100.13.1/30'
               ipv6_address: '2001:db8:100:13::1/127'
-        isis_ifaces:
-            - ge-0/0/3:
-              name: 'ge-0/0/3'
+        isis_intf:
+            - name: 'ge-0/0/3'
               level: '1'
-            - ge-0/0/4:
-              name: 'ge-0/0/4'
+            - name: 'ge-0/0/4'
               level: '1'
 
 vMX2:
@@ -44,44 +39,37 @@ vMX2:
         - core
     data:
         site: 522
-        ifaces:
-            - lo0.0:
-              name: 'lo0'
+        interfaces:
+            - name: 'lo0'
               unit: '0'
               description: 'Loopback'
               ipv4_address: '10.100.100.2/32'
               ipv6_address: '2001:db8:100:100::2/128'
               iso_address: '49.0000.0000.0000.0002.00'
-            - ge-0/0/0.0:
-              name: 'ge-0/0/0'
+            - name: 'ge-0/0/0'
               unit: '0'
               description: 'ge-0/0/0.vMX4 [AS64533]'
               ipv4_address: '10.100.24.1/30'
               ipv6_address: '2001:db8:100:24::1/127'
-            - ge-0/0/1.0:
-              name: 'ge-0/0/1'
+            - name: 'ge-0/0/1'
               unit: '0'
               description: 'ge-0/0/1.vMX5 [AS64544]'
               ipv4_address: '10.100.25.1/30'
               ipv6_address: '2001:db8:100:25::1/127'
-            - ge-0/0/2.0:
-              name: 'ge-0/0/2'
+            - name: 'ge-0/0/2'
               unit: '0'
               description: 'ge-0/0/2.vMX3 [BB]'
               ipv4_address: '10.100.23.1/30'
               ipv6_address: '2001:db8:100:23::1/127'
-            - ge-0/0/3.0:
-              name: 'ge-0/0/3'
+            - name: 'ge-0/0/3'
               unit: '0'
               description: '[BB] vMX1 (ge-0/0/3)'
               ipv4_address: '10.100.12.2/30'
               ipv6_address: '2001:db8:100:12::2/127'
-        isis_ifaces:
-            - ge-0/0/2:
-              name: 'ge-0/0/2'
+        isis_intf:
+            - name: 'ge-0/0/2'
               level: '1'
-            - ge-0/0/3:
-              name: 'ge-0/0/3'
+            - name: 'ge-0/0/3'
               level: '1'
 
 vMX3:
@@ -92,44 +80,37 @@ vMX3:
         - core
     data:
         site: 522
-        ifaces:
-            - lo0.0:
-              name: 'lo0'
+        interfaces:
+            - name: 'lo0'
               unit: '0'
               description: 'Loopback'
               ipv4_address: '10.100.100.3/32'
               ipv6_address: '2001:db8:100:100::3/128'
               iso_address: '49.0000.0000.0000.0003.00'
-            - ge-0/0/0.0:
-              name: 'ge-0/0/0'
+            - name: 'ge-0/0/0'
               unit: '0'
               description: 'ge-0/0/0.vMX5 [AS64544]'
               ipv4_address: '10.100.35.1/30'
               ipv6_address: '2001:db8:100:35::1/127'
-            - ge-0/0/1.0:
-              name: 'ge-0/0/1'
+            - name: 'ge-0/0/1'
               unit: '0'
               description: 'ge-0/0/1.vMX4 [AS64533]'
               ipv4_address: '10.100.34.1/30'
               ipv6_address: '2001:db8:100:34::1/127'
-            - ge-0/0/2.0:
-              name: 'ge-0/0/2'
+            - name: 'ge-0/0/2'
               unit: '0'
               description: 'ge-0/0/2.vMX2 [BB]'
               ipv4_address: '10.100.23.2/30'
               ipv6_address: '2001:db8:100:23::2/127'
-            - ge-0/0/4.0:
-              name: 'ge-0/0/4'
+            - name: 'ge-0/0/4'
               unit: '0'
               description: 'ge-0/0/4.vMX1 [BB]'
               ipv4_address: '10.100.13.2/30'
               ipv6_address: '2001:db8:100:13::2/127'
-        isis_ifaces:
-            - ge-0/0/2:
-              name: 'ge-0/0/2'
+        isis_intf:
+            - name: 'ge-0/0/2'
               level: '1'
-            - ge-0/0/4:
-              name: 'ge-0/0/4'
+            - name: 'ge-0/0/4'
               level: '1'
 
 
@@ -141,38 +122,35 @@ vMX4:
         - core
     data:
         site: 533
-        ifaces:
-            - lo0.0:
-              name: 'lo0'
+        interfaces:
+            - name: 'lo0'
               unit: '0'
               description: 'Loopback'
               ipv4_address: '10.100.100.4/32'
               ipv6_address: '2001:db8:100:100::4/128'
               iso_address: '49.0000.0000.0000.0004.00'
-            - ge-0/0/0.0:
-              name: 'ge-0/0/0'
+            - name: 'ge-0/0/0'
               unit: '0'
               description: 'ge-0/0/0.vMX2 [AS64522]'
               ipv4_address: '10.100.24.2/30'
               ipv6_address: '2001:db8:100:24:2/127'
-            - ge-0/0/1.0:
-              name: 'ge-0/0/1'
+            - name: 'ge-0/0/1'
               unit: '0'
               description: 'ge-0/0/1.vMX3 [AS64522]'
               ipv4_address: '10.100.34.2/30'
               ipv6_address: '2001:db8:100:34::2/127'
-            - ge-0/0/2.0:
-              name: 'ge-0/0/2'
+            - name: 'ge-0/0/2'
               unit: '0'
               description: 'ge-0/0/2.vMX5 [AS64544]'
               ipv4_address: '10.100.45.1/30'
               ipv6_address: '2001:db8:100:45::1/127'
-            - ge-0/0/3.0:
-              name: 'ge-0/0/3'
+            - name: 'ge-0/0/3'
               unit: '0'
               description: 'ge-0/0/3.vMX6 [AS64544]'
               ipv4_address: '10.100.46.1/30'
               ipv6_address: '2001:db8:100:46::1/127'
+        isis_intf:
+            - skip:
 
 
 vMX5:
@@ -183,41 +161,35 @@ vMX5:
         - core
     data:
         site: 544
-        ifaces:
-            - lo0.0:
-              name: 'lo0'
+        interfaces:
+            - name: 'lo0'
               unit: '0'
               description: 'Loopback'
               ipv4_address: '10.100.100.5/32'
               ipv6_address: '2001:db8:100:100::5/128'
               iso_address: '49.0000.0000.0000.0005.00'
-            - ge-0/0/0.0:
-              name: 'ge-0/0/0'
+            - name: 'ge-0/0/0'
               unit: '0'
               description: 'ge-0/0/0.vMX3 [AS64522]'
               ipv4_address: '10.100.35.2/30'
               ipv6_address: '2001:db8:100:35::2/127'
-            - ge-0/0/1.0:
-              name: 'ge-0/0/1'
+            - name: 'ge-0/0/1'
               unit: '0'
               description: 'ge-0/0/1.vMX2 [AS64522]'
               ipv4_address: '10.100.25.2/30'
               ipv6_address: '2001:db8:100:25::2/127'
-            - ge-0/0/2.0:
-              name: 'ge-0/0/2'
+            - name: 'ge-0/0/2'
               unit: '0'
               description: 'ge-0/0/2.vMX4 [AS64533]'
               ipv4_address: '10.100.45.2/30'
               ipv6_address: '2001:db8:100:45::2/127'
-            - ge-0/0/4.0:
-              name: 'ge-0/0/4'
+            - name: 'ge-0/0/4'
               unit: '0'
               description: 'ge-0/0/4.vMX6 [BB]'
               ipv4_address: '10.100.56.1/30'
               ipv6_address: '2001:db8:100:56::1/127'
-        isis_ifaces:
-            - ge-0/0/4:
-              name: 'ge-0/0/4'
+        isis_intf:
+            - name: 'ge-0/0/4'
               level: '1'
 
 
@@ -229,27 +201,23 @@ vMX6:
         - core
     data:
         site: 544
-        ifaces:
-            - lo0.0:
-              name: 'lo0'
+        interfaces:
+            - name: 'lo0'
               unit: '0'
               description: 'Loopback'
               ipv4_address: '10.100.100.6/32'
               ipv6_address: '2001:db8:100:100::6/128'
               iso_address: '49.0000.0000.0000.0006.00'
-            - ge-0/0/3.0:
-              name: 'ge-0/0/3'
+            - name: 'ge-0/0/3'
               unit: '0'
               description: 'ge-0/0/3.vMX4 [AS64533]'
               ipv4_address: '10.100.46.2/30'
               ipv6_address: '2001:db8:100:46::2/127'
-            - ge-0/0/4.0:
-              name: 'ge-0/0/4'
+            - name: 'ge-0/0/4'
               unit: '0'
               description: 'ge-0/0/4.vMX5 [BB]'
               ipv4_address: '10.100.56.2/30'
               ipv6_address: '2001:db8:100:56::2/127'
-        isis_ifaces:
-            - ge-0/0/4:
-              name: 'ge-0/0/4'
+        isis_intf:
+            - name: 'ge-0/0/4'
               level: '1'

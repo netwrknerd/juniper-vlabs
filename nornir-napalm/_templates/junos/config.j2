@@ -1,36 +1,36 @@
 interfaces {
-{% for iface in host.ifaces %}
-    {{ iface.name }} {
-        description "{{ iface.description }}";
+{% for item in host.interfaces %}
+    {{ item.name }} {
+        description "{{ item.description }}";
         unit 0 {
             family inet {
-                address {{ iface.ipv4_address }};
+                address {{ item.ipv4_address }};
             }
             family inet6 {
-                address {{ iface.ipv6_address }};
+                address {{ item.ipv6_address }};
             }
-            {% if iface.name  == 'lo0' -%}
+            {% if item.name  == 'lo0' -%}
             family iso {
-                address {{ iface.iso_address}}
+                address {{ item.iso_address}};
             }
-            {% elif iface.name  != 'lo0' -%}
+            {% elif item.name  != 'lo0' -%}
             family mpls {
             }
-            {% endif %}
-{% endfor %}
+{% endif %}
         }
     }
-}
-protocol {
-    isis {
-{% for ifaces, level in host.isis_ifaces.ifaces()  %}
-        interface {{ ifaces }} {
-{% if level  == '1' -%}
-            level 2 disable;
-{% elif level == '2' -%}
-            level 1 disable;
-{% endif %}
 {% endfor %}
-        }
+}
+protocol 
+    isis {
+{% for item in host.isis_intf  %}
+        interface {{ item.name }} {
+        {% if item.level  == '1' -%}
+            level 2 disable;
+        {% elif item.level == '2' -%}
+            level 1 disable;
+        {% endif %}
+}
+{% endfor %}
     }
 }
